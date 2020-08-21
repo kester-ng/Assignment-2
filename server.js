@@ -1,6 +1,7 @@
 // Import express
-
 let express = require('express');
+
+require('dotenv').config()
 
 // Import Body parser
 let bodyParser = require('body-parser');

@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://admin:@ds253922.mlab.com:53922/heroku_jxg6h87t', { useNewUrlParser: true});
+mongoose.connect('mongodb://admin:password123@ds253922.mlab.com:53922/heroku_jxg6h87t', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection

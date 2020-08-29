@@ -10,7 +10,7 @@ DO TAKE NOT THAT BOTH LOCAL AND HEROKU SHARE THE SAME ONLINE DATABASE. EASIER TO
 
 ### Setting up Locally
 
-1. Git clone the repository.
+1. Git clone the repository. Then at root folder, type `npm install` to install all the dependencies.
 
 2. To start up the server, type in `npm run dev` at root of the project.
 

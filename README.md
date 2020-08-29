@@ -44,11 +44,11 @@ Each ingredient contains 3 fields, all which are required. What the fields repre
 
 ##### GET Request
 
-![Header](images/Get_header.png)
+![Header](images/get_header.png)
 
 ##### GET Result
 
-![Result](images/Get_result.png)
+![Result](images/get_result.png)
 
 #### Post
 

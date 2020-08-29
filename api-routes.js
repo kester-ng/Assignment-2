@@ -24,9 +24,6 @@ router.route('/contacts/:contact_id')
     .patch(contactController.update)
     .put(contactController.update)
     .delete(contactController.delete);
-    
-// Export API routes
-module.exports = router;
 */
 
 var ingredientController = require("./ingredientController");

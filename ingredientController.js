@@ -35,7 +35,7 @@ exports.new = function(req, res) {
 
 // Handle get requests
 exports.view = function(req, res) {
-    Ingredient.findByID(req.params.ingredient_id, function(err, ingredient) {
+    Ingredient.findById(req.params.ingredient_id, function(err, ingredient) {
         if (err)
             res.send(err);
         res.json({
@@ -51,10 +51,11 @@ exports.update = function (req, res) {
     Ingredient.findById(req.params.ingredient_id, function (err, ingredient) {
         if (err)
             res.send(err);
-        ingredient.name = req.body.name ? req.body.name : ingredient.name;            ingredient.price = req.body.price;
-       ingredient.stock = req.body.stock;
+        ingredient.name = req.body.name ? req.body.name : ingredient.name;            
+        ingredient.price = req.body.price;
+        ingredient.stock = req.body.stock;
         // save the contact and check for errors
-        contact.save(function (err) {
+        ingredient.save(function (err) {
             if (err)
                 res.json(err);
             res.json({

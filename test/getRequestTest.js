@@ -13,7 +13,20 @@ describe("GET /", () => {
             .get("/api/ingredients")
             .end((err, res) => {
                 res.body.should.be.a("object");
-                done()
+                done();
             });
     });
-})
+});
+
+describe("GET single ingredient", () => {
+    // test if can grab single ingredient via id 
+    // for this test to work, please don't delete ID of 3 from the list
+    it("Should get one ingredient based on ID", (done) => {
+        chai.request(app)
+            .get("/api/ingredients/3")
+            .end((err, res) => {
+                res.body.should.be.a("object");
+                done();
+        });
+    })
+});

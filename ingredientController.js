@@ -1,5 +1,5 @@
 // import ingredient model
-Ingredient = require("./ingredientModel");
+const Ingredient = require("./ingredientModel");
 
 // Handle index actions
 exports.index = function(req, res) {

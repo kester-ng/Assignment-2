@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 //mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 mongoose.connect('mongodb+srv://test:admin@cs3219.fws9e.gcp.mongodb.net/API?retryWrites=true&w=majority', {useNewUrlParser: true,
     useUnifiedTopology: true});
+    
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -48,3 +49,6 @@ app.use('/api', apiRoutes);
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
+
+//export default app; // need to export for chai testing
+module.exports = app

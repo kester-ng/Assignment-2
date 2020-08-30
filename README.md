@@ -95,4 +95,8 @@ Required to update all fields!.
 
 ### Testing via travis CI
 
-To be included....
+1. The files already contain the travis configurations.
+
+2. Simply fork the repo and then add it to your travis account.
+
+3. Trigger a build and see the same few tests running but on travis. Subsequently, any merges or updates to your forked repo will automatically trigger a build!

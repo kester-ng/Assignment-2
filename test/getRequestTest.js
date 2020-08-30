@@ -1,10 +1,12 @@
 const chai =  require('chai');
 const chaiHttp =  require('chai-http');
 const app = require('../server');
+const assert = chai.assert;
 
 // configure chai settings
 chai.use(chaiHttp);
 chai.should();
+
 
 describe("GET /", () => {
     // test that it is able to connect and grab all ingredient list (if any)
@@ -13,6 +15,7 @@ describe("GET /", () => {
             .get("/api/ingredients")
             .end((err, res) => {
                 res.body.should.be.a("object");
+                assert.equal("success", res.body.status);
                 done();
             });
     });

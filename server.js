@@ -50,5 +50,7 @@ app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 
+/*
 //export default app; // need to export for chai testing
 module.exports = app
+*/

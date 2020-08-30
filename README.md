@@ -8,8 +8,6 @@
 
 A simple RESTFUL API to update and keep track of ingredients and how much it costs. It can also be food as well. Not really useful, but a simple demo for RESTFUL API with node.js, express and mongoDB. Used MongoDB Atlas to host online DB.
 
-DO TAKE NOT THAT BOTH LOCAL AND HEROKU SHARE THE SAME ONLINE DATABASE. EASIER TO SET UP THAT WAY!
-
 ### Setting up Locally
 
 1. Git clone the repository. Then at root folder, type `npm install` to install all the dependencies.

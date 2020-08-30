@@ -7,6 +7,7 @@ const assert = chai.assert;
 chai.use(chaiHttp);
 chai.should();
 
+/*
 describe("GET /", () => {
     // test that it is able to connect and grab all ingredient list (if any)
     it("Should get all ingredients from mongoDB atlas", (done) => {
@@ -18,7 +19,7 @@ describe("GET /", () => {
                 done();
             });
     });
-});
+});*/
 
 describe("GET single ingredient", () => {
     // test if can grab single ingredient via id 

@@ -1,6 +1,6 @@
 # CS3219 Assignment B
 
-[![Build Status](https://travis-ci.org/kester-ng/CS3219-Assignment-1.svg?branch=master)](https://travis-ci.org/kester-ng/CS3219-Assignment-1)
+[![Build Status](https://travis-ci.org/kester-ng/Assignment-2.svg?branch=master)](https://travis-ci.org/kester-ng/Assignment-2)
 
 ## Assignment B1
 

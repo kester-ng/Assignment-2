@@ -42,7 +42,7 @@ describe("POST /", () => {
         chai.request(app)
             .post("/api/ingredients")
             .set("content-type", "application/x-www-form-urlencoded")
-            .send({name: "Quad Cheese Pizza", price: 25.50, stock: 14}) // craving some of them right now sobs
+            .send({name: "Triple Cheese Pizza", price: 25.50, stock: 14}) // craving some of them right now sobs
             .end((err, res)=> {
                 if (err) {
                     done(err);

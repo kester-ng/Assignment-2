@@ -1,6 +1,6 @@
 const chai =  require('chai');
 const chaiHttp =  require('chai-http');
-const app = require('../index');
+const app = require('../testEnv');
 const assert = chai.assert;
 const expect = chai.expect;
 
@@ -42,7 +42,7 @@ describe("POST /", () => {
         chai.request(app)
             .post("/api/ingredients")
             .set("content-type", "application/x-www-form-urlencoded")
-            .send({name: "Triple Cheese Pizza", price: 25.50, stock: 14}) // craving some of them right now sobs
+            .send({name: "Quad Cheese Pizza", price: 25.50, stock: 14}) // craving some of them right now sobs
             .end((err, res)=> {
                 if (err) {
                     done(err);

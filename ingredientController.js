@@ -1,7 +1,7 @@
 // import ingredient model
 const Ingredient = require("./ingredientModel");
 
-// Handle index actions
+// Handle index actions for base
 exports.index = function(req, res) {
     Ingredient.get(function(err, ingredients) {
         if (err) {
@@ -25,15 +25,33 @@ exports.new = function(req, res) {
     ingredient.price = req.body.price;
     ingredient.stock = req.body.stock;
 
-    ingredient.save(function (err) {
-        res.json({
-            message: 'New ingredient created!',
-            data: ingredient
-        });
-    })
+    // check for duplicates
+    Ingredient.findOne({name: ingredient.name, price: ingredient.price, stock:ingredient.stock}, function(err, found) {
+        if (err) {
+            res.json({
+                status:"Error, please try again",
+                message: err
+            });
+        }
+
+        if (found) {
+            res.json({
+                status: "Already saved inside!",
+                message: "Duplicate entry"
+            });
+        } else {
+            ingredient.save(function (err) {
+                res.json({
+                    message: 'New ingredient created!',
+                    data: ingredient
+                });
+            })
+        }
+    });
+
 };
 
-// Handle get requests
+// Handle get requests for one particular ingredient
 exports.view = function(req, res) {
     Ingredient.findById(req.params.ingredient_id, function(err, ingredient) {
         if (err)

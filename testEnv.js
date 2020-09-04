@@ -23,14 +23,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true});
 var db = mongoose.connection;
+
+const Ingredient = require("./ingredientModel");
 
 // Added check for DB connection
 if(!db)
     console.log("Error connecting db")
-else
-    console.log("Db connected successfully")
+else {
+    console.log("Db connected successfully");
+    Ingredient.deleteMany(); // reset database
+}
 
 // Setup server port
 var port = process.env.PORT || 8080;
@@ -46,4 +50,4 @@ app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 
-//module.exports = app
+module.exports = app

@@ -8,17 +8,30 @@
 
 A simple RESTFUL API to update and keep track of ingredients and how much it costs. It can also be food as well. Not really useful, but a simple demo for RESTFUL API with node.js, express and mongoDB. Used MongoDB Atlas to host online DB.
 
+### Dependencies
+
+Please install these on your own!
+
+1. [npm](https://www.npmjs.com/get-npm)
+
+2. [node](https://nodejs.org/en/download/)
+
+3. [MongoDB](https://docs.mongodb.com/manual/installation/)
+
+
 ### Setting up Locally
 
 1. Git clone the repository. Then at root folder, type `npm install` to install all the dependencies.
 
-2. To start up the server, type in `npm run dev` at root of the project.
+2. To start up the local mongodb, type in `npm run start_db` at root of the project.
 
-3. Then to access, go to `localhost:8080`
+3. To start up the server, type in `npm run dev` at root of the project.
 
-4. To access the RESTFUL api for the server, go to `localhost:8080/api/ingredients`. If you omit `/ingredients`, you will see a webpage with a happy message :).
+4. Then to access, go to `localhost:8080`
 
-5. Go Postman and try out the requests!
+5. To access the RESTFUL api for the server, go to `localhost:8080/api/ingredients`. If you omit `/ingredients`, you will see a webpage with a happy message :).
+
+6. Go Postman and try out the requests!
 
 ### To access the API on an endpoint (Heroku)
 
@@ -82,7 +95,6 @@ Required to update all fields!.
 
 ![Header](images/delete_result.png)
 
-
 ## Assignment B2
 
 ### Testing locally
@@ -90,6 +102,8 @@ Required to update all fields!.
 1. Tests all `PUT`, `DELETE`, `POST`, and `GET` requests.
 
 2. To run locally, simply type in `npm run test`
+
+3. Ensure the mongodb is running -> `npm run start_db`
 
 ### Testing via travis CI
 

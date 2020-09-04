@@ -69,18 +69,25 @@ exports.update = function (req, res) {
     Ingredient.findById(req.params.ingredient_id, function (err, ingredient) {
         if (err)
             res.send(err);
-        ingredient.name = req.body.name ? req.body.name : ingredient.name;            
-        ingredient.price = req.body.price;
-        ingredient.stock = req.body.stock;
-        // save the contact and check for errors
-        ingredient.save(function (err) {
-            if (err)
-                res.json(err);
-            res.json({
-                message: 'Ingredient Info updated',
-                data: ingredient
+        try {
+            ingredient.name = req.body.name ? req.body.name : ingredient.name;            
+            ingredient.price = req.body.price? req.body.price: ingredient.price;
+            ingredient.stock = req.body.stock? req.body.stock: ingredient.stock;
+            // save the contact and check for errors
+            ingredient.save(function (err) {
+                if (err)
+                    res.json(err);
+                res.json({
+                    message: 'Ingredient Info updated',
+                    data: ingredient
+                });
             });
-        });
+        } catch (err) {
+            res.json({
+                status: "Error!",
+                message: err
+            })
+        }
     });
 };
 

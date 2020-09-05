@@ -121,7 +121,7 @@ Required to update all fields!.
 
 2. GET - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
 
-3. POST - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
+3. POST - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients
 
 4. DELETE - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
 

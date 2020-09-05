@@ -3,5 +3,9 @@ node_js:
     - '10.16.0'
 services:
     - mongodb
-install: npm install
-script: npm run test
+install: 
+    - npm install
+    - npm install -g serverless
+script: 
+    - npm run test
+    - serverless deploy

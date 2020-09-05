@@ -112,3 +112,19 @@ Required to update all fields!.
 2. Simply fork the repo and then add it to your travis account.
 
 3. Trigger a build and see the same few tests running but on travis. Subsequently, any merges or updates to your forked repo will automatically trigger a build!
+
+## Assignment B3
+
+### Endpoint for AWS Lambda function
+
+1. GET - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients
+
+2. GET - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
+
+3. POST - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
+
+4. DELETE - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
+
+5. UPDATE - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
+
+- Have yet to add travis configuration to auto deploy CD.

@@ -1,0 +1,60 @@
+service: ingredients-api
+
+provider:
+    name: aws
+    runtime: nodejs10.x # set node.js runtime
+    memorySize: 128 # set the maximum memory of the Lambdas in Megabytes
+    timeout: 10 # the timeout is 10 seconds (default is 6 seconds)
+    stage: dev # setting the env stage to dev, this will be visible in the routes
+    region: us-east-1
+
+functions:
+    create:
+        handler: handler.create
+        events:
+            - http:
+                path: ingredients
+                method: post
+                cors: true
+
+    getOneIngredient:
+        handler: handler.getOneIngredient
+        events:
+            - http:
+                path: ingredients/{id}
+                method: get
+                cors: true
+    
+    getAllIngredients:
+        handler: handler.getAllIngredients
+        events:
+            - http:
+                path: ingredients
+                method: get
+                cors: true
+    
+    updateIngredient:
+        handler: handler.updateIngredient
+        events:
+            - http:
+                path: ingredients/{id}
+                method: put
+                cors: true
+    
+    deleteIngredient:
+        handler: handler.deleteIngredient
+        events:
+            - http:
+                path: ingredients/{id}
+                method: delete
+                cors: true
+
+plugins:
+    - serverless-offline
+    
+package:
+    exclude:
+        - venv/**
+        - serverless/**
+        - images/**
+        - database/**

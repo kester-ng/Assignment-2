@@ -117,6 +117,10 @@ Required to update all fields!.
 
 ### Endpoint for AWS Lambda function
 
+Do take note. Currently, in postman, you can only POST/UPDATE with a body that is raw (ie x-www-form-urlencoded not supported). Do see picture below for an example.
+
+![Example](images/lambda.png)
+
 1. GET - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients
 
 2. GET - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}

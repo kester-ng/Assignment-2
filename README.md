@@ -131,4 +131,4 @@ Do take note. Currently, in postman, you can only POST/UPDATE with a body that i
 
 5. UPDATE - https://pyyz2y0tzg.execute-api.us-east-1.amazonaws.com/dev/ingredients/{id}
 
-- Have yet to add travis configuration to auto deploy CD.
+Also, travis will auto deploy the lambda functions onto AWS. However, if you would like to try to deploy it. It is important to configure a IAM user, and add in your own AWS access key and private key. And also change the process.env db link to your own db link. And any changes to the code will be deployed to AWS as well!

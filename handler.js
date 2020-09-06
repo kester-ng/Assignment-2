@@ -21,6 +21,8 @@ function connectToDatabase(uri) {
     });
 }
 
+module.exports
+
 module.exports.getAllIngredients = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
 
@@ -28,6 +30,10 @@ module.exports.getAllIngredients = (event, context, callback) => {
         Ingredients.find()
             .then(ingredients => callback(null, {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+                    "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+                },
                 body: JSON.stringify({
                     ingredients: ingredients,
                     message: "Ingredients all collected!"

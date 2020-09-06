@@ -53,6 +53,10 @@ module.exports.getOneIngredient = (event, context, callback) => {
         Ingredients.findById(event.pathParameters.id)
             .then(ingredients => callback(null, {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+                    "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+                },
                 body: JSON.stringify({
                     ingredients: ingredients,
                     message: "Ingredients all collected!"
@@ -72,6 +76,10 @@ module.exports.create = (event, context, callback) => {
         Ingredients.create(JSON.parse(event.body))
             .then(ingredient => callback(null, {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+                    "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+                },
                 body: JSON.stringify({
                     ingredients: ingredient,
                     message: "Ingredients created!"
@@ -93,6 +101,10 @@ module.exports.updateIngredient = (event, context, callback) => {
         })
             .then(ingredient => callback(null, {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+                    "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+                },
                 body: JSON.stringify({
                     ingredients: ingredient,
                     message: "Ingredients updated!"
@@ -112,6 +124,10 @@ module.exports.deleteIngredient = (event, context, callback) => {
         Ingredients.findByIdAndRemove(event.pathParameters.id)
             .then(ingredient => callback(null, {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+                    "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+                },
                 body: JSON.stringify({
                     ingredients: ingredient,
                     message: "Ingredients Removed!"

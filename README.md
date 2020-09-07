@@ -6,7 +6,7 @@
 
 ### Description
 
-A simple RESTFUL API to update and keep track of ingredients and how much it costs. It can also be food as well. Not really useful, but a simple demo for RESTFUL API with node.js, express and mongoDB. Used MongoDB Atlas to host online DB.
+A simple RESTFUL API to update and keep track of ingredients or food items and how much it costs. It can also be food as well. Not really useful, but a simple demo for RESTFUL API with node.js, express and mongoDB. Used MongoDB Atlas to host online DB.
 
 ### Dependencies
 

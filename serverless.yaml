@@ -10,7 +10,7 @@ provider:
 
 functions:
   server:
-    handler: index.handler
+    handler: server.handler
     events:
       - http:
           path: /

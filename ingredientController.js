@@ -9,6 +9,7 @@ exports.index = function(req, res) {
                 status: "error",
                 message: err,
             });
+            return;
         }
         res.json({
             status: "success",
@@ -32,6 +33,7 @@ exports.new = function(req, res) {
                 status:"Error, please try again",
                 message: err
             });
+            return;
         }
 
         if (found) {
@@ -40,11 +42,19 @@ exports.new = function(req, res) {
                 message: "Duplicate entry"
             });
         } else {
-            ingredient.save(function (err) {
-                res.json({
-                    message: 'New ingredient created!',
-                    data: ingredient
-                });
+            ingredient.save(function (err, data) {
+                if (err) {
+                    res.json({
+                        status: "Error!",
+                        message: err
+                    });
+                    return;
+                } else {
+                    res.json({
+                        message: 'New ingredient created!',
+                        data: ingredient
+                    });
+                }
             })
         }
     });
@@ -54,8 +64,10 @@ exports.new = function(req, res) {
 // Handle get requests for one particular ingredient
 exports.view = function(req, res) {
     Ingredient.findById(req.params.ingredient_id, function(err, ingredient) {
-        if (err)
+        if (err) {
             res.send(err);
+            return;
+        }
         res.json({
             message: 'Ingredient details loading..',
             data: ingredient
@@ -67,16 +79,20 @@ exports.view = function(req, res) {
 // Handle update contact info
 exports.update = function (req, res) {
     Ingredient.findById(req.params.ingredient_id, function (err, ingredient) {
-        if (err)
+        if (err) {
             res.send(err);
+            return;
+        }
         try {
             ingredient.name = req.body.name ? req.body.name : ingredient.name;            
             ingredient.price = req.body.price? req.body.price: ingredient.price;
             ingredient.stock = req.body.stock? req.body.stock: ingredient.stock;
             // save the contact and check for errors
             ingredient.save(function (err) {
-                if (err)
+                if (err) {
                     res.json(err);
+                    return;
+                }
                 res.json({
                     message: 'Ingredient Info updated',
                     data: ingredient
@@ -87,6 +103,7 @@ exports.update = function (req, res) {
                 status: "Error!",
                 message: err
             })
+            return;
         }
     });
 };
@@ -95,12 +112,16 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
     Ingredient.remove({
         _id: req.params.ingredient_id
-    }, function (err, contact) {
-        if (err)
+    }, function (err, data) {
+        if (err) {
             res.send(err);
+            return;
+        } else {
             res.json({
                 status: "success",
-                message: 'Ingredient deleted'
-        });
+                message: 'Ingredient deleted',
+                data: data
+            });
+        }
     });
 };

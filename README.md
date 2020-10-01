@@ -77,7 +77,7 @@ Please install these on your own!
 
 1. Just type in this link -> `https://contact-heroku.herokuapp.com/api/ingredients`.
 
-    1.1 `https://contact-heroku.herokuapp.com/api/ingredient/id` indicates the specific ingredient with that ID! Only GET, PUT and DELETE requests are allowed.
+    1.1 `https://contact-heroku.herokuapp.com/api/ingredients/id` indicates the specific ingredient with that ID! Only GET, PUT and DELETE requests are allowed.
 
     1.2 `https://contact-heroku.herokuapp.com/api/ingredients` is for all ingredients in database. GET AND POST methods are only allowed. 
 
